@@ -1,8 +1,13 @@
 # Compiled class file
+a.out
 *.class
+*.pyc
+*.apk
 
 # Log file
 *.log
+#.run.log
+#.last_tmp.py
 
 # BlueJ files
 *.ctxt
@@ -19,5 +24,36 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# General
+Thumbs.db
+#nl.sh
+
+# General extensions
+*.c~
+*.cpp~
+*.java~
+*.php.swp
+*.php~
+*.js~
+*.css~
+*.less~
+*.html~
+*.htm~
+*.htaccess~
+*~
+*._.DS_Store
+
+# Git
+*.orig
+
+# Editors
+nbproject
+*.iml
+.idea
+.project
+.classpath
+.settings
+
+# Development specific files
+/temp/*
+
