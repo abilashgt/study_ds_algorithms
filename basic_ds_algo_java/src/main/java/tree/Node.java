@@ -1,8 +1,8 @@
 package tree;
 
 public class Node {
-    Integer key;
-    Node left, right;
+    public Integer key;
+    public Node left, right;
 
     public Node(Integer key) {
         this.key = key;
