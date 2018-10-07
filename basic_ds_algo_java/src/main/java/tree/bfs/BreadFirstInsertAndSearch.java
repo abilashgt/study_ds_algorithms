@@ -109,20 +109,6 @@ public class BreadFirstInsertAndSearch {
         }
     }
 
-    Boolean isGivenLevelFull(Node root, int level){
-        if(root == null) return false;
-        else if(level == 2) {
-            if(root.getLeft()==null) return false;
-            if(root.getRight()==null) return false;
-        }
-        else if(level>2){
-            printGivenLevel(root.left, level-1);
-            printGivenLevel(root.right, level-1);
-        }
-
-        return true;
-    }
-
     int findHeight(){
         return findHeight(this.root);
     }
