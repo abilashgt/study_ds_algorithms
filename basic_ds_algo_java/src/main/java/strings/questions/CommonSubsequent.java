@@ -37,11 +37,11 @@ public class CommonSubsequent {
     }
 
     public static String subString(Integer start, String str1, String str2){
-        String longest = "";
+        StringBuilder longest = new StringBuilder();
         for(int i = start, j = 0; i<str1.length() & j<str2.length(); ){
             for(int k = j; k < str2.length(); k++) {
                 if (str1.charAt(i) == str2.charAt(k)) {
-                    longest += str1.charAt(i);
+                    longest.append(str1.charAt(i));
                     //System.out.println(str1.charAt(i) + " - " + str2.charAt(k));
                     i++; j=k+1;
                 }
@@ -54,6 +54,6 @@ public class CommonSubsequent {
         }
 
         System.out.println("sub:"+longest);
-        return longest;
+        return longest.toString();
     }
 }
