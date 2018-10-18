@@ -4,6 +4,8 @@ public class Node {
     public Integer key;
     public Node left, right;
 
+    public Node() { }
+
     public Node(Integer key) {
         this.key = key;
     }
