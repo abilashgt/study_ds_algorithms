@@ -1,6 +1,6 @@
-package tree.bst;
+package trees.bst;
 
-import tree.Node;
+import trees.Node;
 
 public class BinarySearchTree {
     Node root;

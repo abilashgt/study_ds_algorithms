@@ -1,4 +1,4 @@
-package tree.questions;
+package trees.questions;
 
 /*
  Sorted Array to Balanced BST
@@ -23,7 +23,7 @@ package tree.questions;
  https://www.geeksforgeeks.org/sorted-array-to-balanced-bst/
  */
 
-import tree.Node;
+import trees.Node;
 
 public class SortedArrayToBalBST {
 

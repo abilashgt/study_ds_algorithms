@@ -1,6 +1,6 @@
-package tree.questions;
+package trees.questions;
 
-import tree.Node;
+import trees.Node;
 
 /**
 Least Common Ancestor (LCA)

@@ -1,4 +1,4 @@
-package tree;
+package trees;
 
 public class Node {
     public Integer key;

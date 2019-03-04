@@ -1,6 +1,6 @@
-package tree.bfs;
+package trees.bfs;
 
-import tree.Node;
+import trees.Node;
 
 import java.io.BufferedReader;
 import java.io.IOException;

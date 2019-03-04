@@ -1,4 +1,4 @@
-package tree.bst;
+package trees.bst;
 
 /*
 A program to check if a binary tree is BST or not
@@ -8,7 +8,7 @@ A binary search tree (BST) is a node based binary tree data structure which has 
 • Both the left and right subtrees must also be binary search trees.
  */
 
-import tree.Node;
+import trees.Node;
 
 public class CheckBST {
     private static Node bTree;

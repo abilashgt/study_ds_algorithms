@@ -1,4 +1,4 @@
-package tree.questions;
+package trees.questions;
 
 /*
 Symmetric Tree (Mirror Image of itself)
@@ -25,7 +25,7 @@ REFERENCE
 https://www.geeksforgeeks.org/symmetric-tree-tree-which-is-mirror-image-of-itself/
  */
 
-import tree.Node;
+import trees.Node;
 
 public class MirrorImage {
     Node root;
