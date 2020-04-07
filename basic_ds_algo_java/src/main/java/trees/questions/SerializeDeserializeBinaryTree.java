@@ -5,6 +5,10 @@ import trees.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * ref: https://leetcode.com/explore/interview/card/google/65/design-4/3092/
+ */
+
 // public class Codec
 public class SerializeDeserializeBinaryTree {
     // Encodes a tree to a single string.
