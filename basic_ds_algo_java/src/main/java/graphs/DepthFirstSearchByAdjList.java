@@ -14,27 +14,28 @@ REFERENCE:
 https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
  */
 
-public class DepthFirstSearch {
+public class DepthFirstSearchByAdjList {
 
-    public static void startDFS(Graph g, int v){
+    public static void startDFS(GraphAdjList g, int v){
         boolean visited[] = new boolean[g.V];
         SearchDFS(g, v, visited);
     }
 
-    public static void SearchDFS(Graph g, int v, boolean[] visited){
+    public static void SearchDFS(GraphAdjList g, int v, boolean[] visited){
         visited[v] = true;
 
         System.out.print(v+" ");
 
         for(int n: g.adj[v]){
+            System.out.print(n);
             if(!visited[n]){
-                SearchDFS(g, n, visited);
+                //SearchDFS(g, n, visited);
             }
         }
     }
 
     public static void main(String[] args) {
-        Graph g = new Graph(4);
+        GraphAdjList g = new GraphAdjList(4);
 
         g.addEdge(0, 1);
         g.addEdge(0, 2);
