@@ -24,14 +24,12 @@ public class DepthFirstSearchByAdjList {
     }
 
     public static void SearchDFS(GraphAdjList g, int v, boolean[] visited){
+        System.out.print(v+" ");
         visited[v] = true;
 
-        System.out.print(v+" ");
-
         for(int n: g.adj[v]){
-            System.out.print(n);
             if(!visited[n]){
-                //SearchDFS(g, n, visited);
+                SearchDFS(g, n, visited);
             }
         }
     }
