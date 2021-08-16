@@ -1,4 +1,4 @@
-package trees.bfs;
+package trees.search;
 
 import trees.Node;
 
