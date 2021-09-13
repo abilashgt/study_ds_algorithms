@@ -1,4 +1,4 @@
-package arrays.linked_lists;
+package linked_lists;
 
 public class LinkedListNode {
     private Integer value;
