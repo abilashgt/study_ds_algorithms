@@ -30,7 +30,7 @@ public class LCA {
         // If either n1 or n2 matches with root's key, report
         // the presence by returning root (Note that if a key is
         // ancestor of other, then the ancestor key becomes LCA
-        if (node.key == n1 || node.key == n2)
+        if (node.value == n1 || node.value == n2)
             return node;
 
         // Look for keys in left and right subtrees
@@ -65,12 +65,12 @@ public class LCA {
          */
 
         System.out.println("LCA(4, 5) = " +
-                tree.findLCA(4, 5).key);
+                tree.findLCA(4, 5).value);
         System.out.println("LCA(4, 6) = " +
-                tree.findLCA(4, 6).key);
+                tree.findLCA(4, 6).value);
         System.out.println("LCA(3, 4) = " +
-                tree.findLCA(3, 4).key);
+                tree.findLCA(3, 4).value);
         System.out.println("LCA(2, 4) = " +
-                tree.findLCA(2, 4).key);
+                tree.findLCA(2, 4).value);
     }
 }
