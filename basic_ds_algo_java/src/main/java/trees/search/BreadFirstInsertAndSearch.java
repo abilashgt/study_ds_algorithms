@@ -1,10 +1,8 @@
-package trees.bfs;
+package trees.search;
 
 import trees.Node;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 
 /*
@@ -30,29 +28,15 @@ public class BreadFirstInsertAndSearch {
     public static void main(String[] args) throws IOException {
         BreadFirstInsertAndSearch bTree = new BreadFirstInsertAndSearch();
 
-        InputStreamReader reader = new InputStreamReader(System.in);
-        BufferedReader in = new BufferedReader(reader);
-        String line;
-
-        try {
-            while ((line = in.readLine()) != null) {
-                Integer inputNode = Integer.parseInt(line);
-                System.out.println(inputNode);
-                bTree.insert(inputNode);
-            }
-        }
-        catch (NumberFormatException e){
-
-        }
-
-        /*bTree.root = new Node(1);
+        // input
+        bTree.root = new Node(1);
         bTree.root.left = new Node(2);
         bTree.root.right = new Node(3);
 
         bTree.root.left.left = new Node(4);
         bTree.root.left.right = new Node(5);
         bTree.root.right.left = new Node(6);
-        bTree.root.right.right = new Node(7);*/
+        bTree.root.right.right = new Node(7);
 
         System.out.println("Height = "+bTree.findHeight());
         System.out.println("Bread First Search:");
@@ -102,7 +86,7 @@ public class BreadFirstInsertAndSearch {
 
     void printGivenLevel(Node root, int level){
         if(root == null) return;
-        else if(level == 1) System.out.println(root.getKey());
+        else if(level == 1) System.out.println(root.getValue());
         else if(level>1){
             printGivenLevel(root.left, level-1);
             printGivenLevel(root.right, level-1);

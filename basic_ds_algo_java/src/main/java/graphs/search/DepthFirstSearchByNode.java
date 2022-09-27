@@ -1,4 +1,4 @@
-package graphs;
+package graphs.search;
 
 /*
 Depth First Search:
@@ -13,6 +13,8 @@ Depth First Search:
 REFERENCE:
 https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
  */
+
+import graphs.Node;
 
 import java.util.LinkedList;
 import java.util.List;

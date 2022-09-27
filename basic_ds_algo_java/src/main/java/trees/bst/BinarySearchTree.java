@@ -19,7 +19,7 @@ public class BinarySearchTree {
             return root;
         }
 
-        if(key < root.getKey()){
+        if(key < root.getValue()){
             root.setLeft(insert(root.getLeft(), key));
         }
         else{
@@ -36,7 +36,7 @@ public class BinarySearchTree {
     void inorder(Node root){
         if(root!=null) {
             inorder(root.getLeft());
-            System.out.println(root.getKey());
+            System.out.println(root.getValue());
             inorder(root.getRight());
         }
     }

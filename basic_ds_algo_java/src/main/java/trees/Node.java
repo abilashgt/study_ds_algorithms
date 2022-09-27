@@ -1,21 +1,21 @@
 package trees;
 
 public class Node {
-    public Integer key;
+    public Integer value;
     public Node left, right;
 
     public Node() { }
 
     public Node(Integer key) {
-        this.key = key;
+        this.value = key;
     }
 
-    public Integer getKey() {
-        return key;
+    public Integer getValue() {
+        return value;
     }
 
-    public void setKey(Integer key) {
-        this.key = key;
+    public void setValue(Integer value) {
+        this.value = value;
     }
 
     public Node getLeft() {

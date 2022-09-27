@@ -40,11 +40,11 @@ public class CheckBST {
        if(bTree==null){
            return true;
        }
-       else if(bTree.key<min||bTree.key>max){
-           System.out.println(bTree.key+" "+min+" "+max);
+       else if(bTree.value <min||bTree.value >max){
+           System.out.println(bTree.value +" "+min+" "+max);
            return false;
        }
 
-       return isBST(bTree.left, min, bTree.key) && isBST(bTree.right, bTree.key, max);
+       return isBST(bTree.left, min, bTree.value) && isBST(bTree.right, bTree.value, max);
     }
 }

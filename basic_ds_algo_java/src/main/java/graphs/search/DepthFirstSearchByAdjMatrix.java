@@ -1,4 +1,4 @@
-package graphs;
+package graphs.search;
 
 /*
 Depth First Search:
@@ -14,27 +14,28 @@ REFERENCE:
 https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
  */
 
-public class DepthFirstSearch {
+import graphs.GraphAdjMatrix;
 
-    public static void startDFS(Graph g, int v){
+public class DepthFirstSearchByAdjMatrix {
+
+    public static void startDFS(GraphAdjMatrix g, int v){
         boolean visited[] = new boolean[g.V];
         SearchDFS(g, v, visited);
     }
 
-    public static void SearchDFS(Graph g, int v, boolean[] visited){
+    public static void SearchDFS(GraphAdjMatrix g, int v, boolean[] visited){
+        System.out.print(v+" ");
         visited[v] = true;
 
-        System.out.print(v+" ");
-
-        for(int n: g.adj[v]){
-            if(!visited[n]){
-                SearchDFS(g, n, visited);
+        for(int i=0; i<g.E; i++){
+            if(g.adj[v][i] == 1 && !visited[i]){
+                SearchDFS(g, i, visited);
             }
         }
     }
 
     public static void main(String[] args) {
-        Graph g = new Graph(4);
+        GraphAdjMatrix g = new GraphAdjMatrix(4);
 
         g.addEdge(0, 1);
         g.addEdge(0, 2);

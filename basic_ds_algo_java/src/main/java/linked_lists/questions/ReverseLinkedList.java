@@ -1,6 +1,6 @@
-package arrays.linked_lists.questions;
+package linked_lists.questions;
 
-import arrays.linked_lists.LinkedListNode;
+import linked_lists.LinkedListNode;
 
 public class ReverseLinkedList {
 

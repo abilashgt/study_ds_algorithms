@@ -39,6 +39,9 @@ public class ThreeSumProblem {
         for(List item: result) {
             System.out.println(item.toString());
         }
+
+        findThreeSumUsingHash(nums, 0);
+
     }
 
     public static void threeSumBruteForce(int[] nums) {
@@ -144,5 +147,21 @@ public class ThreeSumProblem {
 
         List<List<Integer>> result = new ArrayList(sumOut.values());
         return result;
+    }
+
+    public static void findThreeSumUsingHash(int a[], int T){
+        for(int i=0; i<a.length-2; i++) {
+            HashSet<Integer> hashA = new HashSet();
+
+            int curr_sum = T-a[i];
+
+            for (int j = i + 1; j < a.length; j++) {
+                if(hashA.contains(curr_sum-a[j])){
+                    System.out.println(a[i] + " " +a[j] + " " + (curr_sum - a[j]));
+                    //break;
+                }
+                hashA.add(a[j]);
+            }
+        }
     }
 }

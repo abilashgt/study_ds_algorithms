@@ -3,12 +3,12 @@ package graphs;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Graph {
-    public int V;
+public class GraphAdjList {
+    public int V; // number of vertices
 
-    public List<Integer> adj[];
+    public List<Integer> adj[]; //Adjacency Lists
 
-    public Graph(int v){
+    public GraphAdjList(int v){
         V = v;
         adj = new LinkedList[v];
 

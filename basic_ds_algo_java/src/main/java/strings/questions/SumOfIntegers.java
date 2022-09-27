@@ -18,6 +18,8 @@ package strings.questions;
 *  additional:
 * 12a-10b=>2
 * 12a-b10 =>22
+*
+* Time complexity = n2 worse  case 2 * n2 = n2
 
  */
 

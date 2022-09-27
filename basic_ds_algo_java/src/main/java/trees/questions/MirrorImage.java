@@ -53,7 +53,7 @@ public class MirrorImage {
     public boolean isMirror(Node nodeLeft, Node nodeRight){
         if(nodeLeft == null && nodeRight == null) return true;
 
-        if(nodeLeft!=null && nodeRight!=null && nodeLeft.key==nodeRight.key) {
+        if(nodeLeft!=null && nodeRight!=null && nodeLeft.value ==nodeRight.value) {
             return isMirror(nodeLeft.left, nodeRight.right) && isMirror(nodeLeft.right, nodeRight.left);
         }
 

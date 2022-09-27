@@ -49,7 +49,7 @@ public class SortedArrayToBalBST {
     public static void preOrder(Node root){
         if(root==null) return;
         preOrder(root.left);
-        System.out.println(root.getKey());
+        System.out.println(root.getValue());
         preOrder(root.right);
     }
 

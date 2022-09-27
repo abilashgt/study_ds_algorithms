@@ -9,6 +9,7 @@ http://k2code.blogspot.com/2012/01/given-integer-array-and-number-x-find.html
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class TwoSumProblem {
@@ -19,31 +20,30 @@ public class TwoSumProblem {
             System.out.println(x);
         }
 
-        // approach 2: binary search
-        System.out.println("Approach 2:");
+        // approach 1: binary search
+        System.out.println("Approach 1: two loops - no algorithm below");
+
+        // approach 2: Hash
+        System.out.println("Approach 2: Hash");
         findPairOfSumUsingHash(a, 25);
 
+        // approach 3: binary search
+        System.out.println("Approach 3: Binary Search");
         System.out.println("Approach Custom:");
         findPairOfSumUsingBS(a, 25);
     }
 
     public static void findPairOfSumUsingHash(Integer a[], int T){
-        Map<Integer, Integer> hashA = new HashMap();
+        HashSet<Integer> hashA = new HashSet();
 
         for(int i=0; i<a.length; i++){
-            hashA.put(a[i], i);
-        }
-
-        for(int i=0; i<a.length; i++){
-            if(hashA.containsKey(T - a[i])){
-                Integer value = hashA.get(T - a[i]);
-                if(!value.equals(i) && i<value){
-                    System.out.println("Position "+ i +" & " + value +" = "+ T);
-                }
+            if(hashA.contains(T-a[i])) {
+                System.out.println(a[i] + " " + (T-a[i]));
             }
+
+            hashA.add(a[i]);
         }
 
-        return;
     }
 
     public static void findPairOfSumUsingBS(Integer a[], int T){
