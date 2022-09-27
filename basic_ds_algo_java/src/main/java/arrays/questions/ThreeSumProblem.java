@@ -35,12 +35,12 @@ public class ThreeSumProblem {
 
         threeSumBruteForce(nums);
 
-        List<List<Integer>> result = threeSum(nums);
+        findThreeSumUsingHash(nums, 0);
+
+        List<List<Integer>> result = threeSumCustom(nums);
         for(List item: result) {
             System.out.println(item.toString());
         }
-
-        findThreeSumUsingHash(nums, 0);
 
     }
 
@@ -78,8 +78,25 @@ public class ThreeSumProblem {
         }
     }
 
-    public static List<List<Integer>> threeSum(int[] nums) {
-        System.out.println("Approach 2: Not finished - bugs");
+    public static void findThreeSumUsingHash(int a[], int T){
+        System.out.println("Approach 2: Using Hash");
+        for(int i=0; i<a.length-2; i++) {
+            HashSet<Integer> hashA = new HashSet();
+
+            int curr_sum = T-a[i];
+
+            for (int j = i + 1; j < a.length; j++) {
+                if(hashA.contains(curr_sum-a[j])){
+                    System.out.println(a[i] + " " +a[j] + " " + (curr_sum - a[j]));
+                    //break;
+                }
+                hashA.add(a[j]);
+            }
+        }
+    }
+
+    public static List<List<Integer>> threeSumCustom(int[] nums) {
+        System.out.println("Approach 3: Not finished - bugs");
         // sort
         Arrays.sort(nums);
 
@@ -147,21 +164,5 @@ public class ThreeSumProblem {
 
         List<List<Integer>> result = new ArrayList(sumOut.values());
         return result;
-    }
-
-    public static void findThreeSumUsingHash(int a[], int T){
-        for(int i=0; i<a.length-2; i++) {
-            HashSet<Integer> hashA = new HashSet();
-
-            int curr_sum = T-a[i];
-
-            for (int j = i + 1; j < a.length; j++) {
-                if(hashA.contains(curr_sum-a[j])){
-                    System.out.println(a[i] + " " +a[j] + " " + (curr_sum - a[j]));
-                    //break;
-                }
-                hashA.add(a[j]);
-            }
-        }
     }
 }
