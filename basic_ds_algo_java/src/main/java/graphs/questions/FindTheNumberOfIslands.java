@@ -4,8 +4,8 @@ public class FindTheNumberOfIslands {
     int ROW = 5, COL = 5;
 
     void DFS(int[][] M, int row, int col, boolean[][] visited){
-        int[] rowNbr = new int[] { -1, -1, -1,  0,  0,  1,  1, 1};
-        int[] colNbr = new int[] { -1,  0,  1, -1,  1, -1,  0, 1};
+        int[] rowNbr = { -1, -1, -1,  0,  0,  1,  1, 1 };
+        int[] colNbr = { -1,  0,  1, -1,  1, -1,  0, 1 };
 
         // mark as visited
         visited[row][col] = true;
