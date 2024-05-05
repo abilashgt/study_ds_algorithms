@@ -27,12 +27,32 @@ public class Matrix01 {
     int[][] inputMat;
     int maxR = 0;
     int maxC = 0;
+    int max = 0;
 
     boolean[][] visited;
     int[][] result;
 
-    public int findDistance(int posX, int posY) {
-        int max = (maxR + maxC) + 2;
+    public Matrix01(int[][] inputMat) {
+        this.inputMat = inputMat;
+        maxR = inputMat.length;
+        if(maxR>0) maxC = inputMat[0].length;
+        max = (maxR + maxC) + 2;
+        visited = new boolean[maxR][maxC];
+        result = new int[maxR][maxC];
+    }
+
+    void solveWithDFS() {
+        for(int i = 0; i<maxR; i++) {
+            for(int j = 0; j<maxC; j++) {
+                DFS(i, j, max, max);
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+        System.out.println(" ");
+    }
+
+    public int DFS(int posX, int posY, int preX, int preY) {
         if(!visited[posX][posY]) {
             visited[posX][posY] = true;
             result[posX][posY] = max;
@@ -48,8 +68,17 @@ public class Matrix01 {
                     int y = posY + colNbr[i];
 
                     if (x >= 0 && y >= 0 && x < maxR && y < maxC) {
-                        int d = 1 + findDistance(x, y);
-                        if (d < dMin) dMin = d;
+                        if(x == preX && y == preY) visited[posX][posY] = false;
+                        else {
+                            int d = 1 + DFS(x, y, posX, posY);
+                            if(d == 1) {
+                                dMin = d;
+                                break;
+                            }
+                            else if (d < dMin) {
+                                dMin = d;
+                            }
+                        }
                     }
                 }
             }
@@ -69,7 +98,7 @@ public class Matrix01 {
                 { 1, 0, 1, 0, 1 } };
 
         Matrix01 soln1 = new Matrix01(mat);
-        soln1.solve();
+        //soln1.solve();
 
         int[][] mat2 = new int[][] {
                 { 0, 0, 0 },
@@ -77,26 +106,39 @@ public class Matrix01 {
                 { 1, 1, 1 } };
 
         Matrix01 soln2 = new Matrix01(mat2);
-        soln2.solve();
-    }
+        //soln2.solve();
 
-    public Matrix01(int[][] inputMat) {
-        this.inputMat = inputMat;
-        maxR = inputMat.length;
-        if(maxR>0) maxC = inputMat[0].length;
-        visited = new boolean[maxR][maxC];
-        result = new int[maxR][maxC];
-    }
+        int[][] mat3 = new int[][] {
+                {1,0,1,1,0,0,1,0,0,1},
+                {0,1,1,0,1,0,1,0,1,1},
+                {0,0,1,0,1,0,0,1,0,0},
+                {1,0,1,0,1,1,1,1,1,1},
+                {0,1,0,1,1,0,0,0,0,1},
+                {0,0,1,0,1,1,1,0,1,0},
+                {0,1,0,1,0,1,0,0,1,1},
+                {1,0,0,0,1,1,1,1,0,1},
+                {1,1,1,1,1,1,1,0,1,0},
+                {1,1,1,1,0,1,0,0,1,1}
+        };
 
-    void solve() {
-        for(int i = 0; i<maxR; i++) {
-            for(int j = 0; j<maxC; j++) {
-                findDistance(i, j);
-                System.out.print(result[i][j] + " ");
-            }
-            System.out.println(" ");
-        }
-        System.out.println(" ");
+        Matrix01 soln3 = new Matrix01(mat3);
+        soln3.solveWithDFS();
+
+        int[][] mat4 = new int[][] {
+                {0,0,1,0,1,1,1,0,1,1},
+                {1,1,1,1,0,1,1,1,1,1},
+                {1,1,1,1,1,0,0,0,1,1},
+                {1,0,1,0,1,1,1,0,1,1},
+                {0,0,1,1,1,0,1,1,1,1},
+                {1,0,1,1,1,1,1,1,1,1},
+                {1,1,1,1,0,1,0,1,0,1},
+                {0,1,0,0,0,1,0,0,1,1},
+                {1,1,1,0,1,1,0,1,0,1},
+                {1,0,1,1,1,0,1,1,1,0}
+        };
+
+        Matrix01 soln4 = new Matrix01(mat4);
+        soln4.solveWithDFS();
     }
 }
 
