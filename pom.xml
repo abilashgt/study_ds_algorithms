@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.abilashthomas.java</groupId>
+  <artifactId>study-parent</artifactId>
+  <version>1.0s-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>study parent</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <version.lombok>1.18.30</version.lombok>
+  </properties>
+
+  <modules>
+    <module>basic_ds_algo_java</module>
+  </modules>
+
+<!--  <build>-->
+<!--    <pluginManagement>-->
+<!--      <plugins>-->
+<!--        <plugin>-->
+<!--          -->
+<!--        </plugin>-->
+<!--      </plugins>-->
+<!--    </pluginManagement>-->
+<!--  </build>-->
+
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>5.9.3</version>
+    </dependency>
+  </dependencies>
+</project>
