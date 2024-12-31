@@ -35,7 +35,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>5.9.3</version>
+      <version>${version.lombok}</version>
     </dependency>
   </dependencies>
 </project>
