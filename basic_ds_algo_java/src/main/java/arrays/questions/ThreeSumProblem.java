@@ -78,8 +78,52 @@ public class ThreeSumProblem {
         }
     }
 
-    public static void findThreeSumUsingHash(int a[], int T){
+    public static List<Integer[]> findThreeSumUsingHash(int[] array, int targetSum) {
         System.out.println("Approach 2: Using Hash");
+        Map<String, Integer[]> output = new LinkedHashMap<>();
+
+        Set<Integer> sumList = new HashSet<Integer>();
+
+        Arrays.sort(array);
+
+        for(int i=0; i<array.length; i++) {
+            sumList.add(array[i]);
+            // System.out.print(array[i] + " ");
+        }
+
+        // System.out.print("= input\n");
+        // System.out.print(targetSum + " = target\n");
+        // System.out.println(sumList + " = sumList\n");
+
+        for(int i=0; i<array.length-1; i++) {
+            Integer first = array[i];
+            for(int j=i+1; j<array.length; j++) {
+                Integer second = array[j];
+                Integer requiredThird = targetSum - (first + second);
+
+                if(requiredThird!=first && requiredThird!=second && sumList.contains(requiredThird)){
+                    Integer[] result = new Integer[]{first, second, requiredThird};
+                    Arrays.sort(result);
+
+                    String hash = result[0] + " " + result[1] + " " + result[2];
+                    output.put(hash, result);
+                    System.out.println("output = "+hash);
+                }
+            }
+        }
+
+        // System.out.println("output2:");
+        // for(Integer[] test: output.values()){
+        //   System.out.print(test[0]+" ");
+        //   System.out.print(test[1]+" ");
+        //   System.out.println(test[2]+" ");
+        // }
+
+        return new ArrayList(output.values());
+    }
+
+    public static void findThreeSumUsingHash2(int a[], int T){
+        System.out.println("Approach 2: Using Hash : incomplete");
         for(int i=0; i<a.length-2; i++) {
             HashSet<Integer> hashA = new HashSet();
 
