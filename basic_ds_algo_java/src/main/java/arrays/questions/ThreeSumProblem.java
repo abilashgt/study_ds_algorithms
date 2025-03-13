@@ -35,13 +35,20 @@ public class ThreeSumProblem {
 
         threeSumBruteForce(nums);
 
-        findThreeSumUsingHash(nums, 0);
+        printOutput2(findThreeSumUsingHash(nums, 0));
+        printOutput(threeSumCustom(nums));
+    }
 
-        List<List<Integer>> result = threeSumCustom(nums);
+    public static void printOutput(List<List<Integer>> result) {
         for(List item: result) {
             System.out.println(item.toString());
         }
+    }
 
+    public static void printOutput2(List<Integer[]> result) {
+        for(Integer[] item: result) {
+            System.out.println(Arrays.stream(item).toList());
+        }
     }
 
     public static void threeSumBruteForce(int[] nums) {
@@ -107,17 +114,17 @@ public class ThreeSumProblem {
 
                     String hash = result[0] + " " + result[1] + " " + result[2];
                     output.put(hash, result);
-                    System.out.println("output = "+hash);
+                    //System.out.println("output = "+hash);
                 }
             }
         }
 
-        // System.out.println("output2:");
-        // for(Integer[] test: output.values()){
-        //   System.out.print(test[0]+" ");
-        //   System.out.print(test[1]+" ");
-        //   System.out.println(test[2]+" ");
-        // }
+//         System.out.println("Final output:");
+//         for(Integer[] test: output.values()){
+//           System.out.print(test[0]+" ");
+//           System.out.print(test[1]+" ");
+//           System.out.println(test[2]+" ");
+//         }
 
         return new ArrayList(output.values());
     }
